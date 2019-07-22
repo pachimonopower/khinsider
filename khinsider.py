@@ -305,7 +305,8 @@ class Soundtrack(object):
 
         Return True if all files were downloaded successfully, False if not.
         """
-        path = os.path.join(os.getcwd(), path)
+        #path = os.path.join(os.getcwd(), path)
+        os.path.join(os.getcwd().decode('cp932').encode('utf-8'), path.encode('utf-8'))
         path = os.path.abspath(os.path.realpath(path))
         if formatOrder:
             formatOrder = [extension.lower() for extension in formatOrder]
